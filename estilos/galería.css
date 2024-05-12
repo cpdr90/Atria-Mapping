@@ -29,7 +29,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content:space-between;
+    /* justify-content:space-between; */
     background-color: var(--colorTerciarioClaro);
 }
 
@@ -40,7 +40,62 @@ body{
 .tarjeta-imagen img{
     max-height: 40vh;
     object-fit:cover;
+    border-radius: 10px;
 }
 
+.contenedorDeElementos {
+    margin: 50px;
+}
 
+.tarjeta-imagen{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin: 5px;
+    margin-right: 0;
+}
 
+#contenedorTarjetas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.botones {
+    /* box-sizing: border-box; */
+    display: flex;
+    /* flex-direction:row; */
+    /* align-items:center; */
+    /* text-align: center; */
+    margin-top: auto;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+    .tarjeta-imagen {
+        width: 90%; /* Cambia el ancho de la tarjeta en pantallas pequeñas */
+    }
+
+    #contenedorTarjetas {
+        grid-template-columns: repeat(2, 1fr); /* Cambia el diseño de la rejilla en pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tarjeta-imagen {
+        width: 100%; /* Cambia el ancho de la tarjeta en pantallas extra pequeñas */
+    }
+
+    #contenedorTarjetas {
+        grid-template-columns: repeat(1, 1fr); /* Cambia el diseño de la rejilla en pantallas extra pequeñas */
+    }
+}
+
+.button--dark {
+    font-size: 12px; /* Cambia el tamaño del texto */
+    padding: 5px 10px; /* Ajusta el relleno del botón */
+    margin-left: 5px;
+
+}
